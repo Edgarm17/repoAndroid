@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PMM_Practica1E1</string>
+    <string name="idNombre">Nombre...</string>
+    <string name="button">Siguiente</string>
+    <string name="nombre2">Nombre2</string>
+    <string name="nombre3">Nombre3</string>
+</resources>
