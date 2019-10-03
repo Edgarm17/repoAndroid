@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Button btn1,btn2 ;
+    Button btn1,btn2,btn3 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +18,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btn1 = (Button)findViewById(R.id.btn1);
         btn2 = (Button)findViewById(R.id.btn2);
-
+        btn3 = (Button)findViewById(R.id.btn3);
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
+        btn3.setOnClickListener(this);
     }
 
     @Override

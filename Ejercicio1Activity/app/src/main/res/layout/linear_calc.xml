@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo"
     >
 
     <TextView
+        android:id="@+id/idResultado"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
 
+        android:layout_height="80dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:layout_marginRight="30dp"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/fondotextview"
+        android:background="@color/colorResultado"
         android:padding="5dp"
         android:text="0"
         android:textAlignment="viewEnd"
-        android:textSize="80sp" />
+        android:textColor="@android:color/white"
+        android:textSize="60sp" />
 
     <LinearLayout
+        android:id="@+id/idLin"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal"
+        android:layout_height="80dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="16dp"
-        android:layout_marginTop="50dp"
-        >
+        android:orientation="horizontal">
 
 
         <Button
@@ -38,7 +38,10 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/colorNumeros"
             android:text="7"
+
+            android:textColor="@color/colorTextosBotons"
             android:textSize="30sp" />
 
         <Button
@@ -47,7 +50,9 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/colorNumeros"
             android:text="8"
+            android:textColor="@color/colorTextosBotons"
             android:textSize="30sp" />
 
         <Button
@@ -56,7 +61,9 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/colorNumeros"
             android:text="9"
+            android:textColor="@color/colorTextosBotons"
             android:textSize="30sp" />
 
         <Button
@@ -65,18 +72,19 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/colorOperaciones"
             android:text="/"
+            android:textColor="@color/colorTextosBotons"
             android:textSize="30sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal"
+        android:layout_height="80dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="16dp"
-        >
+        android:orientation="horizontal">
 
 
         <Button
@@ -85,7 +93,9 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/colorNumeros"
             android:text="4"
+            android:textColor="@color/colorTextosBotons"
             android:textSize="30sp" />
 
         <Button
@@ -94,7 +104,9 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/colorNumeros"
             android:text="5"
+            android:textColor="@color/colorTextosBotons"
             android:textSize="30sp" />
 
         <Button
@@ -103,7 +115,9 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/colorNumeros"
             android:text="6"
+            android:textColor="@color/colorTextosBotons"
             android:textSize="30sp" />
 
         <Button
@@ -112,18 +126,19 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/colorOperaciones"
             android:text="*"
+            android:textColor="@color/colorTextosBotons"
             android:textSize="30sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal"
+        android:layout_height="80dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="16dp"
-        >
+        android:orientation="horizontal">
 
 
         <Button
@@ -132,7 +147,9 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/colorNumeros"
             android:text="1"
+            android:textColor="@color/colorTextosBotons"
             android:textSize="30sp" />
 
         <Button
@@ -141,7 +158,9 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/colorNumeros"
             android:text="2"
+            android:textColor="@color/colorTextosBotons"
             android:textSize="30sp" />
 
         <Button
@@ -150,7 +169,9 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/colorNumeros"
             android:text="3"
+            android:textColor="@color/colorTextosBotons"
             android:textSize="30sp" />
 
         <Button
@@ -159,18 +180,19 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/colorOperaciones"
             android:text="-"
+            android:textColor="@color/colorTextosBotons"
             android:textSize="30sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal"
+        android:layout_height="80dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="16dp"
-        >
+        android:orientation="horizontal">
 
 
         <Button
@@ -179,7 +201,11 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/colorNumeros"
+            android:focusableInTouchMode="false"
+            android:fontFamily="sans-serif-medium"
             android:text="0"
+            android:textColor="@color/colorTextosBotons"
             android:textSize="30sp" />
 
         <Button
@@ -188,7 +214,9 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/colorOperaciones"
             android:text="="
+            android:textColor="@color/colorTextosBotons"
             android:textSize="30sp" />
 
         <Button
@@ -197,7 +225,9 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/colorOperaciones"
             android:text="c"
+            android:textColor="@color/colorTextosBotons"
             android:textSize="30sp" />
 
         <Button
@@ -206,7 +236,9 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/colorOperaciones"
             android:text="+"
+            android:textColor="@color/colorTextosBotons"
             android:textSize="30sp" />
     </LinearLayout>
 </LinearLayout>
