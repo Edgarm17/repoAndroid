@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/idTv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hola Mundo!"
+        android:visibility="invisible"
+        />
+
+    <Button
+        android:id="@+id/idPulsar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pulsar"
+        android:visibility="visible"
+        />
+
+
+</FrameLayout>
