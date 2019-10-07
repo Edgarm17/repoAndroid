@@ -192,6 +192,9 @@ public class Ejercicio4 extends AppCompatActivity implements View.OnClickListene
         error[0]=false;
         comprobarOperaciones(partesOp, opSumaResta, opMultiDiv);
 
+        if (partesOp[partesOp.length-1].equals("+") || partesOp[partesOp.length-1].equals("-") || partesOp[partesOp.length-1].equals("*") || partesOp[partesOp.length-1].equals("/")){
+            error[0] = true;
+        }
 
 
         //EN ESTE WHILE SE VAN HACIENDO LAS OPERACIONES SEGUN
