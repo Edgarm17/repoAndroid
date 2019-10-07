@@ -123,8 +123,12 @@ public class Ejercicio4 extends AppCompatActivity implements View.OnClickListene
                 tv.append(contenido);
                 break;
             case R.id.id_menos:
-                contenido = " - ";
-                tv.append(contenido);
+                if (tv.getText().toString().equals("")){
+                    tv.append("-");
+                }else {
+                    contenido = " - ";
+                    tv.append(contenido);
+                }
                 break;
             case R.id.id_mult:
                 contenido = " * ";
