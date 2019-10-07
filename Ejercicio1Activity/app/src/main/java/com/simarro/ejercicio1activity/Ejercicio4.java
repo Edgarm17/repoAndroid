@@ -25,6 +25,9 @@ public class Ejercicio4 extends AppCompatActivity implements View.OnClickListene
 
         tv = (TextView) findViewById(R.id.idResultado);
 
+        
+
+
         btn0 = (Button) findViewById(R.id.id_0);
         btn1 = (Button) findViewById(R.id.id_1);
         btn2 = (Button) findViewById(R.id.id_2);

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp"
+
+        >
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="\nCarrito de compra"
+            android:textColor="@color/blanco"
+            android:paddingLeft="10dp"
+            />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/blanco"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="10dp"
+        >
+
+        <TextView
+            android:id="@+id/producto1"
+            android:layout_width="0dp"
+            android:layout_weight="50"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:text="\nProducto1"
+            android:textColor="@color/blanco"
+            />
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="0dp"
+            android:layout_weight="10"
+            android:layout_height="50dp"
+            android:inputType="textPersonName"
+            android:layout_gravity="end"
+            android:background="@color/blanco"
+            />
+
+        <TextView
+            android:id="@+id/unidades1"
+            android:layout_width="0dp"
+            android:layout_weight="12"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:text="\nUnidades"
+            android:textAlignment="textEnd"
+            android:textColor="@color/blanco"
+
+
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp"
+
+        >
+
+        <TextView
+            android:id="@+id/producto2"
+            android:layout_width="0dp"
+            android:layout_weight="50"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:text="\nProducto2"
+            android:textColor="@color/blanco"
+            />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="0dp"
+            android:layout_weight="10"
+            android:layout_height="50dp"
+            android:inputType="textPersonName"
+            android:layout_gravity="end"
+            android:background="@color/blanco"
+
+            />
+
+        <TextView
+            android:id="@+id/unidades2"
+            android:layout_width="0dp"
+            android:layout_weight="12"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:text="\nUnidades"
+            android:textAlignment="textEnd"
+            android:textColor="@color/blanco"
+
+
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp"
+
+        >
+
+        <TextView
+            android:id="@+id/producto3"
+            android:layout_width="0dp"
+            android:layout_weight="50"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:text="\nProducto3"
+            android:textColor="@color/blanco"
+            />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="0dp"
+            android:layout_weight="10"
+            android:layout_height="50dp"
+            android:inputType="textPersonName"
+            android:layout_gravity="end"
+            android:background="@color/blanco"
+            />
+
+        <TextView
+            android:id="@+id/unidades3"
+            android:layout_width="0dp"
+            android:layout_weight="12"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:text="\nUnidades"
+            android:textAlignment="textEnd"
+            android:textColor="@color/blanco"
+
+
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/enviar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Enviar por correo electronico" />
+
+    </LinearLayout>
+    <View
+        android:id="@+id/view1"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/blanco"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/importe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Importe"
+            android:textColor="@color/blanco"
+            android:paddingLeft="10dp"
+            />
+
+        <TextView
+            android:id="@+id/dinero1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="000.00€"
+            android:textColor="@color/blanco"
+            android:layout_gravity="end"
+            android:textAlignment="textEnd"
+            android:paddingRight="5dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/iva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="I.V.A"
+            android:textColor="@color/blanco"
+            android:paddingLeft="10dp"
+            />
+
+        <TextView
+            android:id="@+id/dinero2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="00.00€"
+            android:textColor="@color/blanco"
+            android:layout_gravity="end"
+            android:textAlignment="textEnd"
+            android:paddingRight="5dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Total"
+            android:textColor="@color/blanco"
+            android:paddingLeft="10dp"
+            />
+
+        <TextView
+            android:id="@+id/dinero3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0000.00€"
+            android:textColor="@color/blanco"
+            android:layout_gravity="end"
+            android:textAlignment="textEnd"
+            android:paddingRight="5dp"
+            />
+    </LinearLayout>
+    <View
+        android:id="@+id/view2"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/volver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:text="Volver" />
+        <Button
+            android:id="@+id/confirmar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:text="Confirmar" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

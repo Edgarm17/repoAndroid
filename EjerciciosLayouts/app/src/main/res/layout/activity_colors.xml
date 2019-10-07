@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/rexto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TEXTO"
+            android:textColor="@color/blanco"
+            />
+    </LinearLayout>
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/blanco"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fondo negro"
+                android:textColor="@color/blanco"
+                android:checked="true"
+                android:buttonTint="@color/blanco"
+                android:layout_marginBottom="10dp"
+
+                />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fondo verde"
+                android:textColor="@color/blanco"
+                android:buttonTint="@color/blanco"
+                android:layout_marginBottom="10dp"
+
+                />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fondo rojo"
+                android:textColor="@color/blanco"
+                android:buttonTint="@color/blanco"
+                />
+        </RadioGroup>
+    </LinearLayout>
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/blanco"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Texto blanco"
+                android:textColor="@color/blanco"
+                android:checked="true"
+                android:buttonTint="@color/blanco"
+                android:layout_marginBottom="10dp"
+
+                />
+
+            <RadioButton
+                android:id="@+id/radioButton5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Texto amarillo"
+                android:textColor="@color/blanco"
+                android:buttonTint="@color/blanco"
+                android:layout_marginBottom="10dp"
+
+                />
+
+            <RadioButton
+                android:id="@+id/radioButton6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Texto azul"
+                android:textColor="@color/blanco"
+                android:buttonTint="@color/blanco"
+                />
+        </RadioGroup>
+    </LinearLayout>
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/blanco"
+        />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mostrar texto"
+        android:textColor="@color/blanco"
+        android:buttonTint="@color/blanco"
+        android:checked="true"
+        />
+
+
+</LinearLayout>
