@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class Ejercicio4 extends AppCompatActivity implements View.OnClickListener {
 
-    Button btn1, btn2, btn3, btn0, btn4, btn5, btn6, btn7, btn8, btn9, btnSuma, btnResta, btnMulti, btnRes, btnBorrar, btnDiv;
+    Button btn1, btn2, btn3, btn0, btn4, btn5, btn6, btn7, btn8, btn9, btnSuma, btnResta, btnMulti, btnRes, btnBorrar, btnDiv,btnDecimal;
     TextView tv;
 
     @Override
@@ -39,8 +39,10 @@ public class Ejercicio4 extends AppCompatActivity implements View.OnClickListene
         btnResta = (Button) findViewById(R.id.id_menos);
         btnMulti = (Button) findViewById(R.id.id_mult);
         btnDiv = (Button) findViewById(R.id.id_div);
-        btnRes = (Button) findViewById(R.id.id_igual);
-        btnBorrar = (Button) findViewById(R.id.id_borrar);
+        btnRes = (Button) findViewById(R.id.id_borrar);
+        btnBorrar = (Button) findViewById(R.id.id_igual);
+        btnDecimal = (Button) findViewById(R.id.id_decimal);
+
 
         btn0.setOnClickListener(this);
         btn1.setOnClickListener(this);
@@ -59,7 +61,7 @@ public class Ejercicio4 extends AppCompatActivity implements View.OnClickListene
         btnDiv.setOnClickListener(this);
         btnRes.setOnClickListener(this);
         btnBorrar.setOnClickListener(this);
-
+        btnDecimal.setOnClickListener(this);
 
     }
 
@@ -112,6 +114,10 @@ public class Ejercicio4 extends AppCompatActivity implements View.OnClickListene
                 contenido = "9";
                 tv.append(contenido);
                 break;
+            case R.id.id_decimal:
+                contenido = ".";
+                tv.append(contenido);
+                break;
             case R.id.id_suma:
                 contenido = " + ";
                 tv.append(contenido);
@@ -141,29 +147,27 @@ public class Ejercicio4 extends AppCompatActivity implements View.OnClickListene
 
     }
 
-    public static void comprobarOperaciones(String[] partesOp, ArrayList<Integer> opSuma, ArrayList<Integer> opResta, ArrayList<Integer> opMulti, ArrayList<Integer> opDiv) {
+    public static void comprobarOperaciones(String[] partesOp, ArrayList<Integer> opSumaResta, ArrayList<Integer> opMultiDiv) {
 
-        opSuma.clear();
-        opResta.clear();
-        opDiv.clear();
-        opMulti.clear();
+        opSumaResta.clear();
+        opMultiDiv.clear();
         for (int i = 0; i < partesOp.length; i++) {
             //Log.d("hola","Parte "+i+": "+partesOp[i]);
             switch (partesOp[i]) {
                 case "+":
-                    opSuma.add(i);
+                    opSumaResta.add(i);
 
                     break;
                 case "-":
-                    opResta.add(i);
+                    opSumaResta.add(i);
 
                     break;
                 case "*":
-                    opMulti.add(i);
+                    opMultiDiv.add(i);
 
                     break;
                 case "/":
-                    opDiv.add(i);
+                    opMultiDiv.add(i);
 
                     break;
                 default:
@@ -179,71 +183,95 @@ public class Ejercicio4 extends AppCompatActivity implements View.OnClickListene
         //CREAMOS ARRAYLIST DE TODOS LOS TIPOS DE OPERANDOS GUARDANDO SUS POSICIONES EN LA OPERACION.
         //DE ESTA MANERA SABREMOS SI LA OPERACION TIENE LOS DIFERENTES OPERANDOS Y SU POSICIÓN.
         //ESTO SERVIRÁ PARA DESPUÉS APLICAR EL ORDEN DE PRIORIDAD DE LOS OPERANDOS
-        ArrayList<Integer> opSuma = new ArrayList<>();
-        ArrayList<Integer> opResta = new ArrayList<>();
-        ArrayList<Integer> opMulti = new ArrayList<>();
-        ArrayList<Integer> opDiv = new ArrayList<>();
+        ArrayList<Integer> opSumaResta = new ArrayList<>();
+        ArrayList<Integer> opMultiDiv = new ArrayList<>();
         String[] partesOp = operacion.split(" ");
+        boolean[] error = new boolean[1];
+        //CREAMOS UN VECTOR DE BOOLEANOS DE UN SOLO ESPACIO PARA PODER PASAR POR REFERENCIA EL BOOLEANO Y AL MODIFICARLO
+        //DENTRO DE LA FUNCION, TAMBIEN SE MODIFICA FUERA
+        error[0]=false;
+        comprobarOperaciones(partesOp, opSumaResta, opMultiDiv);
 
-        comprobarOperaciones(partesOp, opSuma, opResta, opMulti, opDiv);
+
 
         //EN ESTE WHILE SE VAN HACIENDO LAS OPERACIONES SEGUN
-        while (partesOp.length != 1) {
-            if (opMulti.size() > 0) {
-                partesOp = operar(partesOp, opMulti, operacion, 1);
-                opMulti.clear();
-                comprobarOperaciones(partesOp, opSuma, opResta, opMulti, opDiv);
-            } else if (opDiv.size() > 0) {
-                partesOp = operar(partesOp, opDiv, operacion, 2);
-                opDiv.clear();
-                comprobarOperaciones(partesOp, opSuma, opResta, opMulti, opDiv);
-            } else if (opSuma.size() > 0) {
-                partesOp = operar(partesOp, opSuma, operacion, 3);
-                opSuma.clear();
-                comprobarOperaciones(partesOp, opSuma, opResta, opMulti, opDiv);
-            } else if (opResta.size() > 0) {
-                partesOp = operar(partesOp, opResta, operacion, 4);
-                opResta.clear();
-                comprobarOperaciones(partesOp, opSuma, opResta, opMulti, opDiv);
+        while (partesOp.length != 1 && !error[0]) {
+            if (opMultiDiv.size() > 0) {
+                if (error[0]){
+                    break;
+                }
+                partesOp = operar(partesOp, opMultiDiv, operacion, 1,error);
+                opMultiDiv.clear();
+                comprobarOperaciones(partesOp, opSumaResta,opMultiDiv);
+            }else if (opSumaResta.size() > 0) {
+                if (error[0]){
+                    break;
+                }
+                partesOp = operar(partesOp, opSumaResta, operacion, 2,error);
+                opSumaResta.clear();
+                comprobarOperaciones(partesOp, opSumaResta,opMultiDiv);
             }
         }
 
-        operacion = "";
-        for (int i = 0; i < partesOp.length; i++) {
-            operacion = partesOp[i];
-        }
+            if (error[0]){
+                operacion = "ERROR";
+            }else{
+                operacion = "";
+                for (int i = 0; i < partesOp.length; i++) {
+                    operacion = partesOp[i];
+                }
+            }
+
+
+
 
         tv.setText(operacion);
 
     }
 
     //EN ESTE MÉTODO EL VALOR DE TipoOperacion SE DECIDE ARRIBA EN EL CONDICIONAL SEGUN EL TIPO:
-    // MULTIPLICACIONES = 1, DIVISIONES = 2, SUMAS = 3, RESTAS = 4
-    public static String[] operar(String[] partesOp, ArrayList<Integer> arrayOp, String operacion, int tipoOperacion) {
-        float num1, num2;
+    // MULTIPLICACIONES o DIVISIONES = 1, SUMAS o RESTAS = 2
+    public static String[] operar(String[] partesOp, ArrayList<Integer> arrayOp, String operacion, int tipoOperacion, boolean[] error) {
+        float num1=0;
+        float num2=0;
         float resultado = 0;
         int posicionOp;
         operacion = "";
 
         posicionOp = arrayOp.get(0);
-        num1 = Float.valueOf(partesOp[posicionOp - 1]);
-        num2 = Float.valueOf(partesOp[posicionOp + 1]);
+
+        //CON ESTE TRY/CATCH LO QUE SE HACE ES COMPORBAR SI SE HAN METIDO DOS SIMBOLOS DE OPERACION SEGUIDOS. EJ: 4 + - 5
+
+        try {
+            num1 = Float.valueOf(partesOp[posicionOp - 1]);
+            num2 = Float.valueOf(partesOp[posicionOp + 1]);
+        }catch (NumberFormatException nf){
+            Log.d("hola","Error");
+            error[0] = true;
+
+        }
+
+
         switch (tipoOperacion) {
             case 1:
-                resultado = num1 * num2;
+                if (partesOp[posicionOp].equals("*")){
+                    resultado = num1 * num2;
+                }else if (partesOp[posicionOp].equals("/")){
+                    resultado = num1 / num2;
+                }
+
                 break;
             case 2:
-                resultado = num1 / num2;
-                break;
-            case 3:
-                resultado = num1 + num2;
-                break;
-            case 4:
-                resultado = num1 - num2;
+                if (partesOp[posicionOp].equals("+")){
+                    resultado = num1 + num2;
+                }else if (partesOp[posicionOp].equals("-")){
+                    resultado = num1 - num2;
+                }
+
                 break;
         }
 
-        Log.d("hola", "Resultado multiplicacion " + num1 + "*" + num2 + "=" + resultado);
+    //    Log.d("hola", "Resultado operacion " + num1 + "*" + num2 + "=" + resultado);
         partesOp[posicionOp - 1] = "";
         partesOp[posicionOp + 1] = "";
         partesOp[posicionOp] = Float.toString(resultado);
@@ -259,5 +287,5 @@ public class Ejercicio4 extends AppCompatActivity implements View.OnClickListene
         //   Log.d("hola",operacion);
         return partesOp;
     }
-    
+
 }

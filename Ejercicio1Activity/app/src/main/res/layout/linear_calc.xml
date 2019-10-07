@@ -12,7 +12,7 @@
 
         android:layout_height="80dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="30dp"
         android:background="@color/colorResultado"
         android:padding="5dp"
@@ -25,9 +25,9 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
 
 
@@ -35,7 +35,7 @@
             android:id="@+id/id_7"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_margin="0dp"
             android:layout_weight="1"
             android:backgroundTint="@color/colorNumeros"
             android:text="7"
@@ -47,7 +47,7 @@
             android:id="@+id/id_8"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_margin="0dp"
             android:layout_weight="1"
             android:backgroundTint="@color/colorNumeros"
             android:text="8"
@@ -58,7 +58,7 @@
             android:id="@+id/id_9"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_margin="0dp"
             android:layout_weight="1"
             android:backgroundTint="@color/colorNumeros"
             android:text="9"
@@ -69,7 +69,7 @@
             android:id="@+id/id_div"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_margin="0dp"
             android:layout_weight="1"
             android:backgroundTint="@color/colorOperaciones"
             android:text="/"
@@ -82,7 +82,7 @@
         android:layout_height="80dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
 
 
@@ -90,7 +90,7 @@
             android:id="@+id/id_4"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_margin="0dp"
             android:layout_weight="1"
             android:backgroundTint="@color/colorNumeros"
             android:text="4"
@@ -101,7 +101,7 @@
             android:id="@+id/id_5"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_margin="0dp"
             android:layout_weight="1"
             android:backgroundTint="@color/colorNumeros"
             android:text="5"
@@ -112,7 +112,7 @@
             android:id="@+id/id_6"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_margin="0dp"
             android:layout_weight="1"
             android:backgroundTint="@color/colorNumeros"
             android:text="6"
@@ -123,7 +123,7 @@
             android:id="@+id/id_mult"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_margin="0dp"
             android:layout_weight="1"
             android:backgroundTint="@color/colorOperaciones"
             android:text="*"
@@ -136,7 +136,7 @@
         android:layout_height="80dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
 
 
@@ -144,7 +144,7 @@
             android:id="@+id/id_1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_margin="0dp"
             android:layout_weight="1"
             android:backgroundTint="@color/colorNumeros"
             android:text="1"
@@ -155,7 +155,7 @@
             android:id="@+id/id_2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_margin="0dp"
             android:layout_weight="1"
             android:backgroundTint="@color/colorNumeros"
             android:text="2"
@@ -166,7 +166,7 @@
             android:id="@+id/id_3"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_margin="0dp"
             android:layout_weight="1"
             android:backgroundTint="@color/colorNumeros"
             android:text="3"
@@ -177,7 +177,7 @@
             android:id="@+id/id_menos"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_margin="0dp"
             android:layout_weight="1"
             android:backgroundTint="@color/colorOperaciones"
             android:text="-"
@@ -190,7 +190,7 @@
         android:layout_height="80dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
 
 
@@ -198,7 +198,7 @@
             android:id="@+id/id_0"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_margin="0dp"
             android:layout_weight="1"
             android:backgroundTint="@color/colorNumeros"
             android:focusableInTouchMode="false"
@@ -208,24 +208,24 @@
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/id_igual"
+            android:id="@+id/id_borrar"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_margin="0dp"
             android:layout_weight="1"
             android:backgroundTint="@color/colorOperaciones"
-            android:text="="
+            android:text="C"
             android:textColor="@color/colorTextosBotons"
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/id_borrar"
+            android:id="@+id/id_decimal"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_margin="0dp"
             android:layout_weight="1"
             android:backgroundTint="@color/colorOperaciones"
-            android:text="c"
+            android:text="."
             android:textColor="@color/colorTextosBotons"
             android:textSize="30sp" />
 
@@ -233,11 +233,32 @@
             android:id="@+id/id_suma"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_margin="0dp"
             android:layout_weight="1"
             android:backgroundTint="@color/colorOperaciones"
             android:text="+"
             android:textColor="@color/colorTextosBotons"
             android:textSize="30sp" />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/id_igual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorOperaciones"
+            android:text="="
+            android:textColor="@color/colorTextosBotons"
+            android:textSize="30sp" />
+    </LinearLayout>
+
 </LinearLayout>
