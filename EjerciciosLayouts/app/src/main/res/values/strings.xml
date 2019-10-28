@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">EjerciciosLayouts</string>
+    <string-array name="paises">
+        <item>España</item>
+        <item>Inglaterra</item>
+        <item>Francia</item>
+    </string-array>
+
+    <string-array name="ciudadesEs">
+        <item>Barcelona</item>
+        <item>Valencia</item>
+    </string-array>
+
+    <string-array name="ciudadesFr">
+        <item>Paris</item>
+        <item>Burdeos</item>
+    </string-array>
+
+    <string-array name="ciudadesEn">
+        <item>Londres</item>
+        <item>Liverpool</item>
+    </string-array>
 </resources>
