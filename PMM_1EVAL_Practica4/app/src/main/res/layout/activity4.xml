@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00FAC0"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:background="#ffffff"
+        android:padding="20dp"
+        >
+
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Inicio de sesión"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginBottom="50dp"
+            />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:inputType="textPersonName"
+            android:hint="Usuario"
+            android:layout_marginBottom="20dp"
+            android:textAlignment="center"
+            android:background="#CCCCCC"
+            />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="************"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:inputType="textPassword"
+            android:background="#CCCCCC"
+            android:layout_marginBottom="20dp"
+            />
+
+        <Button
+            android:id="@+id/button11"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="INICIAR SESION"
+            android:backgroundTint="#FF3C22"
+            android:layout_marginBottom="30dp"
+            android:textColor="#ffffff"
+            />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="He olvidado mi contaseña"
+            android:textAlignment="center"
+            />
+
+    </LinearLayout>
+</RelativeLayout>

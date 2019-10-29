@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_app"
+    android:paddingRight="50dp"
+    android:paddingLeft="50dp"
+    android:paddingBottom="40dp"
+    >
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Account"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:layout_above="@id/lay1"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:textStyle="bold"
+        />
+
+    <LinearLayout
+        android:id="@+id/lay1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bordes_redondeados"
+        android:padding="15dp"
+
+        >
+
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:hint="Mail"
+            android:layout_marginTop="100dp"
+           
+            />
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             />
+
+        <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:inputType="textPassword"
+            android:hint="Password"
+            />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Forgot password?"
+            android:textAlignment="viewEnd"
+            android:textColor="#123456"
+            />
+
+        <Button
+            android:layout_marginTop="40dp"
+
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sign in"
+            android:layout_gravity="center"
+            android:background="@drawable/animarboton"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:padding="20dp"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
