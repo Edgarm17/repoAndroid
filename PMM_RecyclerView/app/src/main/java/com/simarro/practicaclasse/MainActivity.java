@@ -12,6 +12,7 @@ import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.media.MediaRouter;
 import android.os.Bundle;
@@ -106,16 +107,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
 
-                c.clipRect(viewHolder.itemView.getLeft(),viewHolder.itemView.getTop(),dX,viewHolder.itemView.getBottom());
-                if (dX < recyclerView.getWidth() / 3){
-                    c.drawColor(Color.GRAY);
-                }else{
-                    c.drawColor(Color.RED);
+                Paint pincel = new Paint();
+                pincel.setColor(Color.WHITE);
+                int sizetext = (int)getResources().getDimension(R.dimen.textsize);
+                pincel.setTextSize(sizetext);
+
+                //Derecha
+
+                if (dX>0){
+                    c.clipRect(viewHolder.itemView.getLeft(),viewHolder.itemView.getTop(),dX,viewHolder.itemView.getBottom());
+                    if (dX < recyclerView.getWidth() / 3){
+                        c.drawColor(Color.GRAY);
+                    }else{
+                        c.drawColor(Color.RED);
+                    }
+                    int margen = (int)getResources().getDimension(R.dimen.margen);
+                    Drawable delete = getDrawable(R.drawable.ic_delete);
+                    delete.setBounds(viewHolder.itemView.getLeft()+margen,viewHolder.itemView.getTop()+margen, viewHolder.itemView.getHeight()-margen,viewHolder.itemView.getBottom()-margen);
+                    delete.draw(c);
+                    pincel.setTextAlign(Paint.Align.LEFT);
+                    c.drawText(getResources().getString(R.string.Eliminar),
+                            viewHolder.itemView.getHeight(),viewHolder.itemView.getBottom()-viewHolder.itemView.getHeight()/2+sizetext/2,pincel);
+                }else if (dX < 0){
+                    c.clipRect(viewHolder.itemView.getRight(),viewHolder.itemView.getTop(),dX,viewHolder.itemView.getBottom());
+                    if (Math.abs(dX) < recyclerView.getWidth() / 3){
+                        c.drawColor(Color.GRAY);
+                    }else{
+                        c.drawColor(Color.BLUE);
+                    }
+                    int margen = (int)getResources().getDimension(R.dimen.margen);
+                    Drawable delete = getDrawable(R.drawable.ic_edit);
+                    delete.setBounds(viewHolder.itemView.getRight()-viewHolder.itemView.getHeight()+margen,viewHolder.itemView.getTop()+margen, viewHolder.itemView.getRight()-margen,viewHolder.itemView.getBottom()-margen);
+                    delete.draw(c);
+                    pincel.setTextAlign(Paint.Align.RIGHT);
+                    c.drawText(getResources().getString(R.string.Editar),
+                            viewHolder.itemView.getRight()-viewHolder.itemView.getHeight(),viewHolder.itemView.getBottom()-viewHolder.itemView.getHeight()/2+sizetext/2,pincel);
                 }
-                int margen = 12;
-                Drawable delete = getDrawable(R.drawable.ic_delete);
-                delete.setBounds(viewHolder.itemView.getLeft()+margen,viewHolder.itemView.getTop()+margen, viewHolder.itemView.getHeight()-margen,viewHolder.itemView.getBottom()-margen);
-                delete.draw(c);
+
+
 
                 super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
             }
@@ -143,5 +172,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Alumno aSeleccionado = alumnos.get(posicion);
             Toast.makeText(MainActivity.this,"Alumno"+aSeleccionado.getNombre(),Toast.LENGTH_LONG).show();
         }
+
+
+
+
+
+
     }
 }

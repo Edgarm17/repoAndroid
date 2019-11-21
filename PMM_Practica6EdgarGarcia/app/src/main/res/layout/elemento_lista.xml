@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imgRobot"
+        android:layout_width="?android:attr/listPreferredItemHeight"
+        android:layout_height="?android:attr/listPreferredItemHeight"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/bender"/>
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre Robot"
+        android:layout_toRightOf="@+id/imgRobot"
+        android:layout_alignParentTop="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold"
+        android:maxLines="1"/>
+    <TextView
+        android:id="@+id/tvTipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvNombre"
+        android:layout_toRightOf="@id/imgRobot"
+        android:maxLines="1"
+        android:text="dni"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        />
+    <TextView
+        android:id="@+id/tvAnyo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvNombre"
+        android:layout_toRightOf="@id/tvTipo"
+        android:maxLines="1"
+        android:text="año"
+        android:textColor="#E91E63"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textAlignment="textEnd"
+        android:layout_marginRight="10dp"
+        />
+
+
+</RelativeLayout>
