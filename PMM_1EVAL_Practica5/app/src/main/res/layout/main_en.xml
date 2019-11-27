@@ -39,7 +39,7 @@
 
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/idCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/idPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -64,7 +64,7 @@
             android:inputType="textPassword" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/idOlvidarPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Forgot password?"

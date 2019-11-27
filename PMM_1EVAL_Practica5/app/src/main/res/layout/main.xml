@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/fondo_app"
-    >
+    android:background="@drawable/fondo_app">
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="41dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
         android:text="Mi cuenta"
         android:textColor="#FFFFFF"
         android:textSize="30dp"
@@ -25,49 +25,90 @@
         android:id="@+id/lay1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-
-        android:layout_marginEnd="40dp"
-
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/bordes_redondeados"
         android:orientation="vertical"
         android:padding="15dp"
+        android:paddingTop="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView">
 
 
-        <EditText
-            android:id="@+id/editText3"
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inpCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:ems="10"
-            android:hint="Correo"
-            android:inputType="textEmailAddress"
-            android:drawableLeft="@drawable/icono_correo"
-            android:drawablePadding="10dp"
+            android:layout_marginTop="100dp">
 
-            />
+            <EditText
+                android:id="@+id/idCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-        <Switch
-            android:id="@+id/switch1"
+                android:drawableLeft="@drawable/icono_correo"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Correo"
+                android:inputType="textEmailAddress"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
 
-        <EditText
-            android:id="@+id/editText"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/switch1"
+
+                android:layout_alignEnd="@+id/switch1"
+                android:layout_marginEnd="10dp"
+                android:text="Mostrar contraseña"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/switch1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inpPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:drawableLeft="@drawable/icono_locker"
-            android:drawablePadding="10dp"
-            android:hint="Contraseña"
-            android:inputType="textPassword" />
+
+            >
+
+            <EditText
+                android:id="@+id/idPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:drawableLeft="@drawable/icono_locker"
+                android:drawablePadding="10dp"
+                android:hint="Contraseña"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/idOlvidarPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Has olvidado la contraseña?"
