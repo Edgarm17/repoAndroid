@@ -1,4 +1,4 @@
-package com.simarro.pmm_practica6edgargarcia;
+package com.simarro.practicaclasse;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.simarro.pmm_practica6edgargarcia", appContext.getPackageName());
+        assertEquals("com.simarro.practicaclasse", appContext.getPackageName());
     }
 }

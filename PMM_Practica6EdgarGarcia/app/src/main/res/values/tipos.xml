@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="tipos">
+        <item>R2D2</item>
+        <item>BENDER</item>
+        <item>WALLE</item>
+    </string-array>
+</resources>

@@ -1,4 +1,4 @@
-package com.simarro.pmm_practica6edgargarcia;
+package com.simarro.practicaclasse;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -36,7 +36,7 @@ public class AdaptadorRobots extends RecyclerView.Adapter<RobotsViewHolder> impl
     public void onBindViewHolder(@NonNull RobotsViewHolder viewHolder, int position) {
 
         Robot robot = robots.get(position);
-        viewHolder.bindRobot(robot);
+        viewHolder.bindAlumno(robot);
     }
 
     @Override
