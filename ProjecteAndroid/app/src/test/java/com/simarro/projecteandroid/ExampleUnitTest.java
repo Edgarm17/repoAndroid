@@ -1,4 +1,4 @@
-package com.simarro.pmm_practica6edgargarcia;
+package com.simarro.projecteandroid;
 
 import org.junit.Test;
 
