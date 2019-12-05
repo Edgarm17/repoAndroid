@@ -2,6 +2,7 @@ package com.edgar.proyecto_android_edgar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
@@ -27,10 +28,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     boolean correo,pass;
 
-    private Typeface fuenteTitulo;
+    public Typeface fuenteTitulo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvPassForget.setOnClickListener(this);
         swPass.setOnClickListener(this);
 
-        this.fuenteTitulo = Typeface.createFromAsset(getAssets(),"fuentes/SFSportsNight.ttf");
+        fuenteTitulo = Typeface.createFromAsset(getAssets(),"fuentes/SFSportsNight.ttf");
         tvTitulo.setTypeface(fuenteTitulo);
 
     }
@@ -74,6 +76,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     correo = true;
                     inpCorreo.setError(null);
                     inpPass.setHelperText(null);
+                    Intent i = new Intent(this,activityMenu.class);
+                    Bundle contenedor = new Bundle();
+                    String[] partesCorreo = etCorreo.getText().toString().split("@");
+
+                    contenedor.putString("name",partesCorreo[0]);
+                    i.putExtras(contenedor);
+                    startActivity(i);
                 }
 
                 break;

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#008577</color>
+    <color name="splash">#4CAF50</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="black">#000000</color>
@@ -9,4 +10,7 @@
     <color name="inpColor">#99FFFFFF</color>
     <color name="gris">#ADACAC</color>
     <color name="fgPassColor">#1161B1</color>
+    <color name="btnOnLog">#E23F3F</color>
+    <color name="btnOffLog">#960000</color>
+    <color name="colorCarga">#2196F3</color>
 </resources>

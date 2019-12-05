@@ -1,11 +1,10 @@
 <resources>
     <string name="app_name">Edgar App Project</string>
-    <string name="tvLogin" translatable="false" >TEAM\nMANAGER</string>
+    <string name="tvLogin" translatable="false">TEAM\nMANAGER</string>
     <string name="email">Email</string>
     <string name="pass">Password</string>
     <string name="showPass">Show Password</string>
     <string name="fgPass">Forget Password?</string>
     <string name="btnLog">Sign in</string>
-
-
+    <string name="saludo">Welcome</string>
 </resources>

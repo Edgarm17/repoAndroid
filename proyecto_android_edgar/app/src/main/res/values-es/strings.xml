@@ -6,4 +6,5 @@
     <string name="fgPass">Has olvidado la contraseña?</string>
     <string name="pass">Contraseña</string>
     <string name="showPass">Mostrar Contraseña</string>
+    <string name="saludo">Bienvenido</string>
 </resources>
