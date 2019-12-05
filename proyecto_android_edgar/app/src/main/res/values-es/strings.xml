@@ -7,4 +7,6 @@
     <string name="pass">Contraseña</string>
     <string name="showPass">Mostrar Contraseña</string>
     <string name="saludo">Bienvenido</string>
+    <string name="carga">Cargando...</string>
+    <string name="user">"USUARIO: "</string>
 </resources>

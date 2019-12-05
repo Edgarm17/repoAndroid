@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     correo = true;
                     inpCorreo.setError(null);
                     inpPass.setHelperText(null);
-                    Intent i = new Intent(this,activityMenu.class);
+                    Intent i = new Intent(this,splashCargaMenu.class);
                     Bundle contenedor = new Bundle();
                     String[] partesCorreo = etCorreo.getText().toString().split("@");
 

@@ -3,15 +3,83 @@
     style="@style/temaMenu"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+    <View
+        style="@style/FondoMenuTema"
+
+        />
 
     <TextView
-        android:id="@+id/idSaludo"
+        android:id="@+id/tvUsuario"
+        style="@style/tvMenuUser" />
+
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/saludo"
-        android:textAlignment="center"
-        android:textSize="50dp"
-        android:layout_marginTop="80dp"
-        android:textColor="@color/white"
-        />
+        android:layout_below="@id/tvUsuario"
+        >
+        <TableRow android:layout_margin="20dp">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvMenu"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="0.5"
+                android:layout_marginRight="10dp"
+                >
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvMenu1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="0.5"
+                >
+
+            </androidx.cardview.widget.CardView>
+        </TableRow>
+        <TableRow android:layout_margin="20dp"
+            >
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvMenu2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="0.5"
+                android:layout_marginRight="10dp"
+                >
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvMenu3"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="0.5"
+                >
+
+            </androidx.cardview.widget.CardView>
+
+        </TableRow>
+        <TableRow android:layout_margin="20dp"
+            >
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvMenu4"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="0.5"
+                android:layout_marginRight="10dp"
+                >
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvMenu5"
+                android:layout_width="match_parent"
+                android:layout_weight="0.5"
+                android:layout_height="100dp"
+                >
+
+            </androidx.cardview.widget.CardView>
+
+        </TableRow>
+
+    </TableLayout>
+
+
 </RelativeLayout>

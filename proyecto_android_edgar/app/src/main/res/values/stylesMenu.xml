@@ -6,6 +6,18 @@
         <item name="android:background">@drawable/soccer_field</item>
     </style>
     <style name="temaCarga">
-        <item name="android:background">@color/colorCarga</item>
+        <item name="android:background">@color/colorMenu</item>
+    </style>
+    <style name="tvMenuUser">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/user</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+    <style name="FondoMenuTema">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/CvColor</item>
     </style>
 </resources>

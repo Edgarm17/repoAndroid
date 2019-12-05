@@ -12,5 +12,7 @@
     <color name="fgPassColor">#1161B1</color>
     <color name="btnOnLog">#E23F3F</color>
     <color name="btnOffLog">#960000</color>
-    <color name="colorCarga">#2196F3</color>
+    <color name="colorMenu">#E68BC34A</color>
+    <color name="grisOscuro">#383838</color>
+    <color name="rojo">#FF0000</color>
 </resources>
