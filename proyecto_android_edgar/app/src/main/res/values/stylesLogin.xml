@@ -16,7 +16,7 @@
     <style name="temaLogin" >
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:background">@drawable/fondo_login</item>
+        <item name="android:background">@drawable/soccer_field</item>
     </style>
 
     <style name="tvLogin">

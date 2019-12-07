@@ -20,4 +20,60 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/CvColor</item>
     </style>
+    <style name="estilTablaMenu">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_below">@id/tvUsuario</item>
+    </style>
+    <style name="tableRowMenu">
+        <item name="android:layout_margin">20dp</item>
+    </style>
+    <style name="cardViewsMenu1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/animar_opcionmenu</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_weight">0.5</item>
+
+    </style>
+    <style name="cardViewsMenu2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/animar_opcionmenu</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_weight">0.5</item>
+    </style>
+    <style name="imgAlineacionMenu">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:src">@drawable/img_alineacion</item>
+    </style>
+    <style name="linearMenu">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">6</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/animar_opcionmenu</item>
+    </style>
+    <style name="tvLinearsMenu">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:background">@color/splash</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="tvDescMenu">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textColor">@color/CvColor</item>
+    </style>
+    <style name="imgViewMenu">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
 </resources>

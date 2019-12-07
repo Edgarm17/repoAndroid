@@ -9,4 +9,8 @@
     <string name="saludo">Welcome</string>
     <string name="carga">Loading...</string>
     <string name="user">USER: </string>
+    <string name="tvAlineacion">LINE UP</string>
+    <string name="tvPlayers">PLAYERS</string>
+    <string name="alineacion">Create your own soccer lineup according to the players you choose.</string>
+    <string name="jugadores">Add, edit and delete players for your team.</string>
 </resources>

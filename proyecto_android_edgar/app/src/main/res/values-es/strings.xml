@@ -9,4 +9,8 @@
     <string name="saludo">Bienvenido</string>
     <string name="carga">Cargando...</string>
     <string name="user">"USUARIO: "</string>
+    <string name="alineacion">Crea tu propia alineación de futbol según los jugadores que elijas.</string>
+    <string name="tvAlineacion">ALINEACIÓN</string>
+    <string name="tvPlayers">JUGADORES</string>
+    <string name="jugadores">Añade, edita y elimina jugadores para tu equipo.</string>
 </resources>
