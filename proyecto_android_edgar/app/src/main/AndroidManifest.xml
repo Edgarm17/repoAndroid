@@ -9,14 +9,18 @@
         android:roundIcon="@drawable/icono_apk"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".splashCargaMenu"
-            android:screenOrientation="portrait"
-            android:label=""
-            ></activity>
-        <activity android:name=".activityMenu" android:label="" android:screenOrientation="portrait"/>
+        <activity android:name=".activityJugadores"></activity>
         <activity
+            android:name=".splashCargaMenu"
             android:label=""
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activityMenu"
+            android:label=""
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".MainActivity"
+            android:label=""
             android:screenOrientation="portrait"
             android:theme="@style/splashTheme">
             <intent-filter>
