@@ -13,4 +13,6 @@
     <string name="tvAlineacion">ALINEACIÓN</string>
     <string name="tvPlayers">JUGADORES</string>
     <string name="jugadores">Añade, edita y elimina jugadores para tu equipo.</string>
+    <string name="delete">Eliminar</string>
+    <string name="edit">Editar</string>
 </resources>

@@ -17,19 +17,19 @@ public class JugadoresViewHolder extends RecyclerView.ViewHolder {
 
     public JugadoresViewHolder(@NonNull View itemView, Context context) {
         super(itemView);
-        imgJugador = itemView.findViewById(R.id.imgRobot);
+        imgJugador = itemView.findViewById(R.id.imgJugador);
         tvNombre=itemView.findViewById(R.id.tvNombre);
-        tvPosicon = itemView.findViewById(R.id.tvPosicon);
+        tvPosicon = itemView.findViewById(R.id.tvPosicion);
         tvNumero = itemView.findViewById(R.id.tvNumero);
         contexto=context;
 
 
     }
 
-    public void bindAlumno(Jugador j){
+    public void bindAlumno(Jugador j) {
 
-        switch (j.getPosicion()){
-            case "PORTERO":
+        switch (j.getPosicion()) {
+            case "Portero":
                 imgJugador.setImageDrawable(contexto.getDrawable(R.drawable.img_portero));
                 break;
             default:
@@ -37,5 +37,9 @@ public class JugadoresViewHolder extends RecyclerView.ViewHolder {
                 break;
         }
 
+        tvNombre.setText(j.getNombre());
+        tvPosicon.setText(j.getPosicion());
+        tvNumero.setText(j.getNumero());
 
+    }
 }

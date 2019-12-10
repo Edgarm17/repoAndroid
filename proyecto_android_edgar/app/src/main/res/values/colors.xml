@@ -16,4 +16,5 @@
     <color name="grisOscuro">#383838</color>
     <color name="rojo">#FF0000</color>
     <color name="CvMenu">#8B8B8B</color>
+    <color name="playersColor">#D8FFFFFF</color>
 </resources>

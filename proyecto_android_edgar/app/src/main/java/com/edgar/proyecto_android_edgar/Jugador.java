@@ -6,15 +6,17 @@ import java.io.Serializable;
 
 public class Jugador implements Serializable {
 
-    private String nombre,posicion,telefono;
-    private int numero;
+    private String nombre,posicion,telefono,numero;
 
-    public Jugador(String nombre, String posicion, String telefono, int numero) {
+
+    public Jugador(String nombre, String posicion, String telefono, String numero) {
         this.nombre = nombre;
         this.posicion = posicion;
         this.telefono = telefono;
         this.numero = numero;
     }
+
+
 
     public String getNombre() {
         return nombre;
@@ -40,11 +42,11 @@ public class Jugador implements Serializable {
         this.telefono = telefono;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 }

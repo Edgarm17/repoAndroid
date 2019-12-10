@@ -13,4 +13,6 @@
     <string name="tvPlayers">PLAYERS</string>
     <string name="alineacion">Create your own soccer lineup according to the players you choose.</string>
     <string name="jugadores">Add, edit and delete players for your team.</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
 </resources>
