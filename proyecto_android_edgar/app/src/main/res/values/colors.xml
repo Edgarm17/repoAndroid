@@ -17,4 +17,5 @@
     <color name="rojo">#FF0000</color>
     <color name="CvMenu">#8B8B8B</color>
     <color name="playersColor">#D8FFFFFF</color>
+    <color name="transparente">#00000000</color>
 </resources>

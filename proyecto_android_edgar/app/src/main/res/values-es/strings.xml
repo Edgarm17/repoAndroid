@@ -15,4 +15,10 @@
     <string name="jugadores">Añade, edita y elimina jugadores para tu equipo.</string>
     <string name="delete">Eliminar</string>
     <string name="edit">Editar</string>
+    <string name="namePlayer">Nombre:</string>
+    <string name="newPlayer">Nuevo Jugador</string>
+    <string name="numberPlayer">Número:</string>
+    <string name="phone">Teléfono:</string>
+    <string name="positionPlayer">Posición:</string>
+    <string name="addPlayer">Crear jugador</string>
 </resources>

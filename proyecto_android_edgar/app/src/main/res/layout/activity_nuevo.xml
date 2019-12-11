@@ -10,12 +10,7 @@
     >
 
     <LinearLayout
-        android:layout_margin="10dp"
-        android:background="@color/inpColor"
-        android:padding="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        style="@style/linearNuevo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,106 +18,62 @@
 
         <TextView
             android:id="@+id/tvNewJugador"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nuevo Jugador"
-            android:textSize="30dp"
-            android:textColor="@color/grisOscuro"
-            android:layout_margin="10dp"
-            android:textStyle="bold"
+            style="@style/tvTituloNuevo"
             />
 
-        <LinearLayout
-            android:padding="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/linearTvNuevo">
 
             <TextView
                 android:id="@+id/tvNombre"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nombre:"
-                android:textColor="@color/black"
-                android:textSize="20dp"
+                android:text="@string/namePlayer"
+                style="@style/tvForm"
                 />
 
             <EditText
                 android:id="@+id/etNombre"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:ems="10"
+                style="@style/etNuevo"
                 android:inputType="textPersonName"
                  />
         </LinearLayout>
 
 
-        <LinearLayout
-            android:padding="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/linearTvNuevo">
 
             <TextView
                 android:id="@+id/tvNumero"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Número:"
-                android:textColor="@color/black"
-                android:textSize="20dp"
+                style="@style/tvForm"
+                android:text="@string/numberPlayer"
                 />
 
             <EditText
                 android:id="@+id/etNumero"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:ems="10"
+                style="@style/etNuevo"
                 android:inputType="number"
                 />
         </LinearLayout>
 
-        <LinearLayout
-            android:padding="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+        <LinearLayout style="@style/linearTvNuevo">
 
             <TextView
+                style="@style/tvForm"
                 android:id="@+id/tvTelefono"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Teléfono:"
-                android:textColor="@color/black"
-                android:textSize="20dp"
+                android:text="@string/phone"
                 />
 
             <EditText
                 android:id="@+id/etTelefono"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:ems="10"
+                style="@style/etNuevo"
                 android:inputType="phone"
                 />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="10dp"
-            >
+        <LinearLayout style="@style/linearTvNuevo">
 
             <TextView
                 android:id="@+id/tvTipo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:textSize="17dp"
-                android:textColor="#000000"
-                android:text="Posición: " />
+                style="@style/tvForm"
+                android:text="@string/positionPlayer"
+                />
 
             <Spinner
                 android:id="@+id/spPosicion"
@@ -138,14 +89,7 @@
 
         <Button
             android:id="@+id/btnAddNuevo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="Crear jugador"
-            android:padding="10dp"
-            android:layout_gravity="center"
-            android:textColor="@color/white"
-            android:background="@drawable/boton_redondo"
+            style="@style/btnNuevo"
             />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

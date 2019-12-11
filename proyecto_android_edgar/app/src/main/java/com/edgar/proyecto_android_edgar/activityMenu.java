@@ -70,7 +70,8 @@ public class activityMenu extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()){
             case R.id.opAlineacion:
-
+                i = new Intent(this,lineupActivity.class);
+                startActivity(i);
                 break;
             case R.id.opJugadores:
                 i = new Intent(this,activityJugadores.class);
