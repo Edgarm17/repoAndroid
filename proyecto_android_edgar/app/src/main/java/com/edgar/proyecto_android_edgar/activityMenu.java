@@ -6,7 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.RelativeLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
@@ -20,6 +24,10 @@ public class activityMenu extends AppCompatActivity implements View.OnClickListe
     public Typeface fuenteTitulo;
     String nombre;
     static ArrayList<Jugador> listaJugadores = new ArrayList<>();
+    ImageButton btnInfo;
+    RadioButton rdWinner, rdLooser, rdDef;
+    View fondo;
+    RelativeLayout rl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +36,7 @@ public class activityMenu extends AppCompatActivity implements View.OnClickListe
 
         cargarDatos(listaJugadores);
 
+        rl = (RelativeLayout)findViewById(R.id.relMenu);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setIcon(R.drawable.ico_apk);
@@ -44,8 +53,23 @@ public class activityMenu extends AppCompatActivity implements View.OnClickListe
         tvUsuario.append(nombre);
         opcionAlineacion = (TableRow)findViewById(R.id.opAlineacion);
         opcionJugadores = (TableRow)findViewById(R.id.opJugadores);
+        btnInfo = (ImageButton)findViewById(R.id.btnInfo);
+        rdWinner = (RadioButton)findViewById(R.id.radioButton2);
+        rdLooser = (RadioButton)findViewById(R.id.radioButton);
+        rdDef = (RadioButton)findViewById(R.id.rbDefault);
+        fondo = (View)findViewById(R.id.fondoMenu);
+
+        rdWinner.setTypeface(fuenteTitulo);
+        rdDef.setTypeface(fuenteTitulo);
+        rdLooser.setTypeface(fuenteTitulo);
+
         opcionAlineacion.setOnClickListener(this);
         opcionJugadores.setOnClickListener(this);
+        btnInfo.setOnClickListener(this);
+        rdWinner.setOnClickListener(this);
+        rdLooser.setOnClickListener(this);
+        rdDef.setOnClickListener(this);
+
 
 
     }
@@ -77,6 +101,22 @@ public class activityMenu extends AppCompatActivity implements View.OnClickListe
                 i = new Intent(this,activityJugadores.class);
                 i.putExtra("lista",listaJugadores);
                 startActivity(i);
+                break;
+            case R.id.btnInfo:
+                i = new Intent(this,activityInfo.class);
+                startActivity(i);
+                break;
+            case R.id.radioButton:
+
+                rl.setBackground(getDrawable(R.drawable.fondo_looser));
+                break;
+            case R.id.radioButton2:
+
+                rl.setBackground(getDrawable(R.drawable.fondo_pro));
+                break;
+            case R.id.rbDefault:
+
+                rl.setBackground(getDrawable(R.drawable.soccer_field));
                 break;
         }
 

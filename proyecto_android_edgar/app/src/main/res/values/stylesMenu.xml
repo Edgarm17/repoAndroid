@@ -18,8 +18,9 @@
     <style name="FondoMenuTema">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:background">@color/CvColor</item>
+        <item name="android:background">@color/fondoMenuColor</item>
     </style>
+
     <style name="estilTablaMenu">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

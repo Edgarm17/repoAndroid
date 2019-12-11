@@ -9,10 +9,13 @@
         android:roundIcon="@drawable/icono_apk"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".lineupActivity"
+        <activity android:name=".activityInfo"
             android:label=""
-            android:screenOrientation="portrait"
             ></activity>
+        <activity
+            android:name=".lineupActivity"
+            android:label=""
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activityNuevo"
             android:label=""

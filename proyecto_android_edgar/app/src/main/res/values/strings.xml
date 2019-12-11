@@ -21,4 +21,14 @@
     <string name="phone">Phone number:</string>
     <string name="numberPlayer">Number:</string>
     <string name="addPlayer">Create player</string>
+    <string name="recInfo">I want to receive information \n about updates.</string>
+    <string name="about">App Info</string>
+    <string name="autor" translatable="false">Edgar Garcia</string>
+    <string name="centre" translatable="false">IES Simarro</string>
+    <string name="team" translatable="false">TEAM</string>
+    <string name="manager" translatable="false">MANAGER</string>
+    <string name="version" translatable="false">0.1.1</string>
+    <string name="theme">Pro Theme</string>
+    <string name="theme2">Looser Theme</string>
+    <string name="def" translatable="false">Default</string>
 </resources>

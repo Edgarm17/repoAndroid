@@ -21,4 +21,8 @@
     <string name="phone">Teléfono:</string>
     <string name="positionPlayer">Posición:</string>
     <string name="addPlayer">Crear jugador</string>
+    <string name="recInfo">Deseo recibir información \n acerca de actualizaciones.</string>
+    <string name="about">Info App</string>
+    <string name="theme">Tema Pros</string>
+    <string name="theme2">Tema Looser</string>
 </resources>
