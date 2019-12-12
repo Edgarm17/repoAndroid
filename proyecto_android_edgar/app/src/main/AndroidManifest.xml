@@ -2,16 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.edgar.proyecto_android_edgar">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/icono_apk"
         android:label="Team Manager"
+
         android:roundIcon="@drawable/icono_apk"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activityInfo"
-            android:label=""
-            ></activity>
+        <activity android:name=".activityEditarJugador"></activity>
+        <activity
+            android:name=".activityInfo"
+            android:label="" />
         <activity
             android:name=".lineupActivity"
             android:label=""
@@ -34,10 +38,11 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
-            android:label=""
+            android:label="Team Manager"
             android:screenOrientation="portrait"
             android:theme="@style/splashTheme">
             <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,12 +39,9 @@ public class activityNuevo extends AppCompatActivity implements View.OnClickList
         etTelefono = (EditText)findViewById(R.id.etTelefono);
         spPos = (Spinner)findViewById(R.id.spPosicion);
 
-        nombre = etNombre.getText().toString();
-        posicion = spPos.getSelectedItem().toString();
-        numero = etNumero.getText().toString();
-        telefono = etTelefono.getText().toString();
 
-        j = new Jugador(nombre,posicion,telefono,numero);
+
+
 
         btn = (Button)findViewById(R.id.btnAddNuevo);
         btn.setOnClickListener(this);
@@ -55,5 +53,17 @@ public class activityNuevo extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
 
+        nombre = etNombre.getText().toString();
+        posicion = spPos.getSelectedItem().toString();
+        numero = etNumero.getText().toString();
+        telefono = etTelefono.getText().toString();
+
+        j = new Jugador(nombre,posicion,telefono,numero);
+
+        Intent i = new Intent(this,activityJugadores.class);
+        i.putExtra("newPlayer",j);
+        System.out.println("INFO: "+j.getNombre()+" "+j.getPosicion());
+        startActivity(i);
+        finish();
     }
 }

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activityNuevo"
+    android:background="@drawable/fondo_champions"
+
+    >
+
+    <LinearLayout
+        style="@style/linearNuevo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvNewJugador"
+            style="@style/tvTituloEditar"
+            />
+
+        <LinearLayout style="@style/linearTvNuevo">
+
+            <TextView
+                android:id="@+id/tvNombre"
+                android:text="@string/namePlayer"
+                style="@style/tvForm"
+                />
+
+            <EditText
+                android:id="@+id/etNombre"
+                style="@style/etNuevo"
+                android:inputType="textPersonName"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout style="@style/linearTvNuevo">
+
+            <TextView
+                android:id="@+id/tvNumero"
+                style="@style/tvForm"
+                android:text="@string/numberPlayer"
+                />
+
+            <EditText
+                android:id="@+id/etNumero"
+                style="@style/etNuevo"
+                android:inputType="number"
+                />
+        </LinearLayout>
+
+        <LinearLayout style="@style/linearTvNuevo">
+
+            <TextView
+                style="@style/tvForm"
+                android:id="@+id/tvTelefono"
+                android:text="@string/phone"
+                />
+
+            <EditText
+                android:id="@+id/etTelefono"
+                style="@style/etNuevo"
+                android:inputType="phone"
+                />
+        </LinearLayout>
+
+        <LinearLayout style="@style/linearTvNuevo">
+
+            <TextView
+                android:id="@+id/tvTipo"
+                style="@style/tvForm"
+                android:text="@string/positionPlayer"
+                />
+
+            <Spinner
+                android:id="@+id/spPosicion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:entries="@array/posiciones"
+
+                />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btnEdit"
+            style="@style/editar"
+            />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

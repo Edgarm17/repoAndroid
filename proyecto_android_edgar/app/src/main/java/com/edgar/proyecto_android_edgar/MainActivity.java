@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setIcon(R.drawable.ico_apk);
 
+
         correo = false;
         pass = false;
 

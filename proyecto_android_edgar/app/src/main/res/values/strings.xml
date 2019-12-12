@@ -12,7 +12,7 @@
     <string name="tvAlineacion">LINE UP</string>
     <string name="tvPlayers">PLAYERS</string>
     <string name="alineacion">Create your own soccer lineup according to the players you choose.</string>
-    <string name="jugadores">Add, edit and delete players for your team.</string>
+    <string name="jugadores">Add, call, edit and delete players for your team.</string>
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>
     <string name="newPlayer">New Player</string>
@@ -31,4 +31,7 @@
     <string name="theme">Pro Theme</string>
     <string name="theme2">Looser Theme</string>
     <string name="def" translatable="false">Default</string>
+    <string name="change">Change</string>
+    <string name="editPlayer">Edit player</string>
+
 </resources>

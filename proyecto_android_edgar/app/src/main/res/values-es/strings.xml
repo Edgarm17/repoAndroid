@@ -12,7 +12,7 @@
     <string name="alineacion">Crea tu propia alineación de futbol según los jugadores que elijas.</string>
     <string name="tvAlineacion">ALINEACIÓN</string>
     <string name="tvPlayers">JUGADORES</string>
-    <string name="jugadores">Añade, edita y elimina jugadores para tu equipo.</string>
+    <string name="jugadores">Añade, llama, edita y elimina jugadores para tu equipo.</string>
     <string name="delete">Eliminar</string>
     <string name="edit">Editar</string>
     <string name="namePlayer">Nombre:</string>
@@ -25,4 +25,6 @@
     <string name="about">Info App</string>
     <string name="theme">Tema Pros</string>
     <string name="theme2">Tema Looser</string>
+    <string name="change">Cambiar</string>
+    <string name="editPlayer">Editar jugador</string>
 </resources>

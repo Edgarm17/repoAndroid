@@ -75,7 +75,7 @@ public class activityMenu extends AppCompatActivity implements View.OnClickListe
     }
 
     public void cargarDatos(ArrayList<Jugador> jugadores){
-        jugadores.add(new Jugador("Jugador1","Portero","65214256","1"));
+        jugadores.add(new Jugador("Jugador1","Portero","699004034","1"));
         jugadores.add(new Jugador("Jugador2","Defensa","65214256","2"));
         jugadores.add(new Jugador("Jugador3","Defensa","65214256","3"));
         jugadores.add(new Jugador("Jugador4","Defensa","65214256","4"));

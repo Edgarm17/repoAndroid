@@ -1,11 +1,14 @@
 package com.edgar.proyecto_android_edgar;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -14,6 +17,7 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -36,12 +40,22 @@ public class activityJugadores extends AppCompatActivity implements View.OnClick
     private ArrayList<Jugador> jugadores;
     private FloatingActionButton fab;
     private SwipeRefreshLayout swipeRefreshLayout;
+    private String telefonoALlamar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jugadores);
 
+        if (this.getIntent().getSerializableExtra("newPlayer") != null){
+            Jugador jNew = (Jugador)this.getIntent().getSerializableExtra("newPlayer");
+            listaJugadores.add(jNew);
+        }else if (this.getIntent().getSerializableExtra("playerEdited") != null){
+            int pos = this.getIntent().getExtras().getInt("position");
+            listaJugadores.set(pos,(Jugador) this.getIntent().getSerializableExtra("playerEdited"));
+        }
+
+        telefonoALlamar = "";
         fab = findViewById(R.id.fab);
         fab.setOnClickListener(this);
 
@@ -56,7 +70,10 @@ public class activityJugadores extends AppCompatActivity implements View.OnClick
             }
         });
 
+
+
         jugadores = listaJugadores;
+
 
 
         recyclerView = (RecyclerView) findViewById(R.id.rv_jugadores);
@@ -85,7 +102,12 @@ public class activityJugadores extends AppCompatActivity implements View.OnClick
                         break;
                     case ItemTouchHelper.LEFT:
                         //Editar
+
+                        Intent i = new Intent(activityJugadores.this,activityEditarJugador.class);
+                        i.putExtra("pos",viewHolder.getAdapterPosition());
+                        startActivity(i);
                         adaptador.notifyDataSetChanged();
+                        finish();
                 }
 
             }
@@ -145,22 +167,49 @@ public class activityJugadores extends AppCompatActivity implements View.OnClick
         if (v.getId() == R.id.fab){
             Intent i = new Intent(this,activityNuevo.class);
             startActivity(i);
+            finish();
         }else{
             int posicion = recyclerView.getChildAdapterPosition(v);
-            Jugador jSeleccionado = jugadores.get(posicion);
+            final Jugador jSeleccionado = jugadores.get(posicion);
             //Toast.makeText(this,"Robot" + jSeleccionado.getNombre(), Toast.LENGTH_LONG).show();
             //Snackbar.make(recyclerView,"Robot" + jSeleccionado.getNombre(), Snackbar.LENGTH_SHORT).show();
             Snackbar.make(recyclerView, "Telefono: " + jSeleccionado.getTelefono(), Snackbar.LENGTH_SHORT)
                     .setAction("LLAMAR", new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Toast.makeText(activityJugadores.this, "Snackbar Pulsada", Toast.LENGTH_LONG).show();
+                            telefonoALlamar = jSeleccionado.getTelefono();
+                            if (ContextCompat.checkSelfPermission(activityJugadores.this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
+                                llamar(telefonoALlamar);
+                            }else{
+                                Utilidades.solicitarPermiso(Manifest.permission.CALL_PHONE,"Se necesita permiso para realizar la llamada.",1,activityJugadores.this);
+                            }
                         }
                     })
                     .setActionTextColor(getColor(R.color.splash))
                     .show();
+
+
+
+
         }
 
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults){
+        if (requestCode == 1){
+            if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                llamar(telefonoALlamar);
+            }else{
+                Toast.makeText(this,"No puedes realizar la llamada sin permiso",Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    public void llamar(String telefono) throws SecurityException{
+        Intent i = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+telefono));
+        startActivity(i);
     }
 
 
