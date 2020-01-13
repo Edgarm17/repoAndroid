@@ -39,4 +39,14 @@ public class MainActivity extends AppCompatActivity implements PrimerFragment.On
 
         transaction.commit();
     }
+
+
+    @Override
+    public void onBackPressed(){
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0){
+            getSupportFragmentManager().popBackStack();
+        }else{
+            super.onBackPressed();
+        }
+    }
 }
