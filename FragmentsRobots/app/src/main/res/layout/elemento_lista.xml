@@ -43,7 +43,7 @@
         android:layout_below="@+id/tvNombre"
         android:layout_toRightOf="@id/imgRobot"
         android:maxLines="1"
-        android:text="Material"
+        android:text="Tipo"
         android:textAppearance="?android:attr/textAppearanceSmall"
         />
 </RelativeLayout>
