@@ -31,7 +31,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Nombre:" />
+            android:hint="Nombre"
+            />
 
         <EditText
             android:id="@+id/etMaterial"
@@ -39,15 +40,15 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Material:" />
+            android:hint="Material"  />
 
         <EditText
             android:id="@+id/etAnyo"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Año:" />
+            android:inputType="number"
+            android:hint="Año"  />
 
         <LinearLayout
             android:layout_width="match_parent"

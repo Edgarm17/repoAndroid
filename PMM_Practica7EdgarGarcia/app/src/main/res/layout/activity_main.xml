@@ -18,20 +18,16 @@
             android:id="@+id/tvRobots"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Robots"
+            android:text="LISTA ROBOTS"
+            android:textColor="#FFFFFF"
+            android:padding="20dp"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_weight="50"
+            android:textAlignment="center"
+            android:background="#30DD4B"
             />
 
-        <Button
-            android:id="@+id/btnNuevo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:text="NUEVO"
-
-            />
     </LinearLayout>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -45,6 +41,8 @@
         android:id="@+id/rv_robots"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#B7FFDC"
+        android:padding="10dp"
         >
 
     </androidx.recyclerview.widget.RecyclerView>

@@ -7,6 +7,8 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -31,8 +33,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private RecyclerView recyclerView;
     public AdaptadorRobots adaptador;
     private RecyclerView.LayoutManager layoutManager;
-    private ArrayList<Robot> robots;
-    private Button btnNuevo;
+    static ArrayList<Robot> robots = new ArrayList<>();
+
 
 
 
@@ -42,39 +44,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnNuevo = (Button)findViewById(R.id.btnNuevo);
-        btnNuevo.setOnClickListener(this);
 
-        robots = new ArrayList<>();
 
-        if (this.getIntent().getSerializableExtra("robotNew") != null){
-            Robot rNew = (Robot) this.getIntent().getSerializableExtra("robotNew");
-            robots.add(rNew);
-        }else if (this.getIntent().getSerializableExtra("robotEditado") != null){
-            int pos = this.getIntent().getExtras().getInt("pos");
-            robots.set(pos,(Robot) this.getIntent().getSerializableExtra("robotEditer"));
-            Toast.makeText(MainActivity.this, "Robot editado", Toast.LENGTH_LONG).show();
+        getSupportActionBar().setTitle("Menú robots");
+
+
+        if (this.getIntent().getExtras() != null){
+
+            if (this.getIntent().getExtras().getParcelable("robotNew") != null){
+                Robot rNew = (Robot) this.getIntent().getExtras().getParcelable("robotNew");
+                Toast.makeText(MainActivity.this, "Robot añadido", Toast.LENGTH_LONG).show();
+                robots.add(rNew);
+
+            }else if (this.getIntent().getExtras().getParcelable("robotEditado") != null){
+                int pos = this.getIntent().getExtras().getInt("pos");
+                robots.set(pos,(Robot) this.getIntent().getExtras().getParcelable("robotEditado"));
+                Toast.makeText(MainActivity.this, "Robot editado", Toast.LENGTH_LONG).show();
+            }else{
+                Toast.makeText(MainActivity.this, "No va ", Toast.LENGTH_LONG).show();
+            }
         }
-
-
 
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.srl);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 // Esto se ejecuta cada vez que se realiza el gesto
-                cargarDatos();
+
                 adaptador.notifyDataSetChanged();
             }
         });
-        /*Desactivar gesto
-        swipeRefreshLayout.setEnabled(false);
-        Personalizar
-        swipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary);
-        swipeRefreshLayout.setProgressBackgroundColorSchemeResource(R.color.colorAccent);*/
-
-
-        //cargarDatos();
 
         recyclerView = (RecyclerView) findViewById(R.id.rv_robots);
         adaptador = new AdaptadorRobots(robots, this);
@@ -105,8 +104,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         //Editar
                         Intent i = new Intent(MainActivity.this,ActivityNuevo.class);
                         Robot robotAEditar = robots.get(viewHolder.getAdapterPosition());
-                        i.putExtra("pos",viewHolder.getAdapterPosition());
-                        i.putExtra("editar",robotAEditar);
+                        Bundle contenedor = new Bundle();
+                        contenedor.putParcelable("editar",robotAEditar);
+                        contenedor.putInt("pos",viewHolder.getAdapterPosition());
+                        i.putExtras(contenedor);
                         startActivity(i);
                         adaptador.notifyDataSetChanged();
                 }
@@ -166,11 +167,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        if (v.getId()==R.id.btnNuevo){
-            Intent i = new Intent(this, ActivityNuevo.class);
-            startActivity(i);
-        }else {
-
             int posicion = recyclerView.getChildAdapterPosition(v);
             Robot aSeleccionado = robots.get(posicion);
             //Toast.makeText(this,"Robot" + aSeleccionado.getNombre(), Toast.LENGTH_LONG).show();
@@ -184,18 +180,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     })
                     .setActionTextColor(getColor(R.color.verde))
                     .show();
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+
+        return  true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.opAdd:
+                Intent i = new Intent(this, ActivityNuevo.class);
+                startActivity(i);
+                return true;
+            case R.id.opReset:
+                robots.clear();
+                adaptador.notifyDataSetChanged();
         }
+
+        return  true;
+
     }
 
-    public void cargarDatos(){
-
-        robots.clear();
-
-        
-
-        robots.add(new Robot("Edgar","Hierro","2000","WALLE"));
-
-
-        swipeRefreshLayout.setRefreshing(false);
-    }
 }

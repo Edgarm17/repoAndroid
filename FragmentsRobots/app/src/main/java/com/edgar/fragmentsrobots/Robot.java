@@ -1,9 +1,7 @@
-package com.simarro.practicaclasse;
+package com.edgar.fragmentsrobots;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class Robot implements Parcelable {
