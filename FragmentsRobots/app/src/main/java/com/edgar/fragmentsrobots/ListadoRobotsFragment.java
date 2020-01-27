@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,28 +27,18 @@ import java.util.ArrayList;
 
 public class ListadoRobotsFragment extends Fragment implements View.OnClickListener{
 
-    private final static String ARG_NOMBRE = "ARG_NOMBRE";
     private OnMiPrimerFragmentListener mListener;
 
     private RecyclerView recyclerView;
     public AdaptadorRobots adaptador;
     private RecyclerView.LayoutManager layoutManager;
     static ArrayList<Robot> robots = new ArrayList<>();
+    private Robot robotSeleccionado;
     private SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
-        Bundle informacionRecibida = getArguments();
-
-        if (informacionRecibida != null){
-
-        }
-
-
 
     }
 
@@ -82,15 +73,6 @@ public class ListadoRobotsFragment extends Fragment implements View.OnClickListe
         recyclerView.setAdapter(adaptador);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
         recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
-
-
-        recyclerView = (RecyclerView) vistaLayout.findViewById(R.id.rv_robots);
-        adaptador = new AdaptadorRobots(robots, vistaLayout.getContext());
-        adaptador.setOnClickListener(this);
-        recyclerView.setAdapter(adaptador);
-        layoutManager = new LinearLayoutManager(vistaLayout.getContext(), LinearLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.addItemDecoration(new DividerItemDecoration(vistaLayout.getContext(),DividerItemDecoration.VERTICAL));
 
 
         final ItemTouchHelper.SimpleCallback myCallback  = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT | ItemTouchHelper.LEFT) {
@@ -157,7 +139,9 @@ public class ListadoRobotsFragment extends Fragment implements View.OnClickListe
     @Override
     public void onClick(View view) {
 
-        mListener.onMiPrimerFragmentClick();
+        robotSeleccionado = robots.get(recyclerView.getChildAdapterPosition(view));
+
+        mListener.onMiPrimerFragmentClick(robotSeleccionado);
 
 
     }
@@ -169,12 +153,12 @@ public class ListadoRobotsFragment extends Fragment implements View.OnClickListe
         if (context instanceof OnMiPrimerFragmentListener){
             mListener = (OnMiPrimerFragmentListener) context;
         }else{
-            throw new RuntimeException(context.toString()+"debe implementar OnMiPrimerFragmentListener");
+            throw new RuntimeException(context.toString()+"debe implementar OnMiSegudnoFragmentListener");
         }
     }
 
     public interface OnMiPrimerFragmentListener{
-        public void onMiPrimerFragmentClick();
+        public void onMiPrimerFragmentClick(Robot seleccionado);
     }
 
 
