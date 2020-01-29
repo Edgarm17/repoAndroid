@@ -1,0 +1,64 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Cuenta" >
+
+        <EditTextPreference
+            android:key="username"
+            android:title="e-mail"
+            android:icon="@android:drawable/ic_menu_edit"
+            android:summary="Introduce el nombre de usuario que utilizastes al crear tu cuenta."/>
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+
+        android:title="Actualizar">
+
+        <CheckBoxPreference
+            android:key="actualizaciones"
+            android:title="Actualizaciones automáticas"
+            android:icon="@android:drawable/ic_menu_upload_you_tube"
+            android:summary="Si está activado los datos se actualizarán automáticamente cada vez que ejecutes la aplicación." />
+
+        <ListPreference
+            android:key="servidor"
+            android:title="Servidor de descarga"
+            android:icon="@android:drawable/ic_menu_preferences"
+            android:summary="Selecciona el servidor desde el que se actualizará la aplicación."
+            android:dialogTitle="Servidores disponibles"
+            android:entryValues="@array/valores_servidor"
+            android:entries="@array/servidores" />
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+
+        android:title="Contenido" >
+
+        <MultiSelectListPreference
+            android:key="categorias"
+            android:title="Categorías"
+            android:icon="@android:drawable/ic_menu_my_calendar"
+            android:summary="Selecciona las categorías que quieres sincronizar."
+            android:dialogTitle="Tus categorias"
+            android:entryValues="@array/valores_categoria"
+            android:entries="@array/categorias"
+            />
+
+
+        <Preference
+            android:title="Visita la web!"
+            android:icon="@android:drawable/ic_menu_week"
+            android:summary="Accede al IES Dr Lluis Simarro Lacabra">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://ieslluissimarro.org"/>
+        </Preference>
+    </PreferenceCategory>
+
+</PreferenceScreen>
