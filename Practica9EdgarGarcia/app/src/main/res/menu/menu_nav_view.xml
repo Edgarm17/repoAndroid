@@ -19,16 +19,20 @@
         android:id="@+id/navigation_subheader"
         android:title="Otras opciones"
         >
+        <menu>
 
-        <item
-            android:id="@+id/menu_subopcion_1"
-            android:icon="@drawable/ic_menu"
-            android:title="SubOpcion 1"
-            android:checked="true" />
-        <item
-            android:id="@+id/menu_subopcion_2"
-            android:icon="@drawable/ic_menu"
-            android:title="SubOpcion 2"
-            android:checked="true" />
+            <item
+                android:id="@+id/menu_subopcion_1"
+                android:icon="@drawable/ic_menu"
+                android:title="SubOpcion 1"
+                android:checked="true" />
+            <item
+                android:id="@+id/menu_subopcion_2"
+                android:icon="@drawable/ic_menu"
+                android:title="SubOpcion 2"
+                android:checked="true" />
+        </menu>
+
+
     </item>
 </menu>
