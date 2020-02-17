@@ -72,6 +72,7 @@ public class DialogPersonalizado extends DialogFragment {
             @Override
             public void onClick(View v) {
                 listener.onCancel(DialogPersonalizado.this);
+                getActivity().setTitle("Football Manager");
             }
 
         });

@@ -3,17 +3,17 @@
     <item
         android:id="@+id/menu_op1"
         android:icon="@android:drawable/ic_menu_help"
-        android:title="Help"
+        android:title="Info"
         android:checked="true" />
     <item
         android:id="@+id/menu_op2"
         android:icon="@android:drawable/ic_lock_lock"
-        android:title="Opcion 2"
+        android:title="Jugadores"
         android:checked="true" />
     <item
         android:id="@+id/menu_op3"
         android:icon="@android:drawable/ic_lock_lock"
-        android:title="Opcion 3"
+        android:title="Alineaciones"
         android:checked="true" />
     <item
         android:id="@+id/navigation_subheader"
