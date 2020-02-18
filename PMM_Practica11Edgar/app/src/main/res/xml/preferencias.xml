@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="Cuenta" >
+
+        <EditTextPreference
+            android:key="username"
+            android:title="e-mail"
+            android:icon="@android:drawable/ic_menu_edit"
+            android:summary="Introduce el nombre de usuario que utilizastes al crear tu cuenta."/>
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+
+        android:title="Actualizar">
+
+        <CheckBoxPreference
+            android:key="actualizaciones"
+            android:title="Actualizaciones automáticas"
+            android:icon="@android:drawable/ic_menu_upload_you_tube"
+            android:summary="Si está activado los datos se actualizarán automáticamente cada vez que ejecutes la aplicación." />
+
+
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+
+        android:title="Contenido" >
+
+        <ListPreference
+            android:key="paginaweb"
+            android:title="Páginas de noticias"
+            android:icon="@drawable/ic_web_foreground"
+            android:summary="Selecciona tu pagina de deportes favorita."
+            android:dialogTitle="Servidores disponibles"
+            android:entryValues="@array/valores_web"
+            android:entries="@array/webs" />
+
+
+        <Preference
+            android:title="Visita la web!"
+            android:icon="@android:drawable/ic_menu_week"
+            android:summary="Accede al IES Dr Lluis Simarro Lacabra">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://ieslluissimarro.org"/>
+        </Preference>
+    </PreferenceCategory>
+</PreferenceScreen>

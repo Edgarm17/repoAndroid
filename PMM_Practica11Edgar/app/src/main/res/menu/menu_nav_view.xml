@@ -7,14 +7,20 @@
         android:checked="true" />
     <item
         android:id="@+id/menu_op2"
-        android:icon="@android:drawable/ic_lock_lock"
+        android:icon="@drawable/ic_nav_players_foreground"
         android:title="Jugadores"
         android:checked="true" />
     <item
         android:id="@+id/menu_op3"
-        android:icon="@android:drawable/ic_lock_lock"
-        android:title="Alineaciones"
+        android:icon="@drawable/ic_nav_news_foreground"
+        android:title="Noticias"
         android:checked="true" />
+    <item
+        android:id="@+id/menu_op4"
+        android:icon="@drawable/ic_nav_weather_foreground"
+        android:title="Tiempo en Xátiva"
+        android:checked="true" />
+
     <item
         android:id="@+id/navigation_subheader"
         android:title="Otras opciones"

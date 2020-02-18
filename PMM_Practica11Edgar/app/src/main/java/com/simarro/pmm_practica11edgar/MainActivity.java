@@ -7,24 +7,35 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+import androidx.preference.PreferenceManager;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, DialogPersonalizado.OnLoginListener{
@@ -35,9 +46,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public static int modificarJugador;
     public static int jugadorAModificar;
     public static ArrayList<Jugador> jugadores = new ArrayList<>();
+    public static WebView webView;
+    public static String estado,temperatura,humedad,viento;
 
 
-
+    public static ProgressBar progressBar;
 
 
     @Override
@@ -46,7 +59,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
 
 
+
         SharedPreferences prefs = getSharedPreferences("Usuarios", Context.MODE_PRIVATE);
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        PreferenciasAplicacion.obtenerPreferencias(preferences,this);
+        PreferenciasAplicacion.mostrarPreferencias(preferences,this);
+
+        PreferenceManager.setDefaultValues(this,R.xml.preferencias,false);
 
         if (prefs.getString("username","").equals("")){
             mostrarDialogoPersonalizado();
@@ -101,11 +121,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
+        getMenuInflater().inflate(R.menu.menu_preferencias, menu);
 
         return  true;
 
     }
+
+
 
 
 
@@ -124,9 +146,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
                 break;
             case R.id.menu_op3:
-                getSupportActionBar().setTitle("Alineación");
-                fragment = FragmentOpc3.newInstance();
+                getSupportActionBar().setTitle("Noticias");
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+                PreferenciasAplicacion.obtenerPreferencias(preferences,this);
+                fragment = FragmentNoticias.newInstance();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
+                if (progressBar != null){
+
+                }
                 break;
             case R.id.menu_subopcion_1:
                 fragment = FragmentFondo.newInstance();
@@ -138,6 +165,39 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 mostrarDialogoPersonalizado();
                 break;
 
+            case R.id.menu_op4:
+                fragment = FragmentTiempo.newInstance();
+
+                ClassConnection connection = new ClassConnection();
+
+                try {
+                    String response = connection.execute("https://api.openweathermap.org/data/2.5/weather?q=Xativa,ES&appid=58a861071ea256255543e94ca1d17e28&lang=es").get();
+
+                    JSONObject jsonRoot = new JSONObject(response);
+
+
+
+                    JSONObject objetoMain = jsonRoot.getJSONObject("main");
+                    JSONObject objetoViento = jsonRoot.getJSONObject("wind");
+
+
+
+
+                    double temp = Float.parseFloat(objetoMain.getString("temp"))-273.15;
+                    long t = Math.round(temp);
+                    temperatura = "TEMPERATURA: "+Long.toString(t)+" ºC";
+                    humedad ="HUMEDAD: "+ objetoMain.getString("humidity")+"%";
+                    viento = "VIENTO: "+objetoViento.getString("speed")+"m/s";
+
+                }catch (InterruptedException e ){
+                    e.printStackTrace();
+                }catch (ExecutionException e){
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
         }
 
 
@@ -161,6 +221,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case android.R.id.home:
                 drawerLayout.openDrawer(GravityCompat.START);
                 return true;
+
+            case R.id.opPref:
+                Intent i = new Intent(this,PreferenciasActivity.class);
+                startActivity(i);
+
+
         }
 
         return super.onOptionsItemSelected(item);
@@ -243,5 +309,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public void onCancel(DialogPersonalizado dialog) {
         finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (webView.canGoBack()){
+            webView.goBack();
+        }else{
+            super.onBackPressed();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (FragmentNoticias.tareaAsincrona != null){
+            FragmentNoticias.tareaAsincrona.cancel(true);
+        }
     }
 }

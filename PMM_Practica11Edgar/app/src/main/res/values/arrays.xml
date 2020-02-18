@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="webs">
+        <item>As</item>
+        <item>Marca</item>
+        <item>Superdeporte</item>
+    </string-array>
+
+    <string-array name="valores_web">
+        <item>https://as.com/</item>
+        <item>https://www.marca.com/</item>
+        <item>https://www.superdeporte.es/</item>
+    </string-array>
+</resources>

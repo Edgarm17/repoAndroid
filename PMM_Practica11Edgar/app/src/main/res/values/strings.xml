@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Football Manager</string>
-    <string name="nombre_user" ></string>
-    <string name="team" >TEAM</string>
-    <string name="manager" >MANAGER</string>
-    <string name="autor" >Edgar Garcia</string>
-    <string name="version" >0.1.1</string>
-    <string name="centre" >IES Simarro</string>
+    <string name="nombre_user"></string>
+    <string name="team">TEAM</string>
+    <string name="manager">MANAGER</string>
+    <string name="autor">Edgar Garcia</string>
+    <string name="version">0.1.1</string>
+    <string name="centre">IES Simarro</string>
     <string name="about">App Info</string>
     <string name="delete">Eliminar</string>
     <string name="edit">Editar</string>
@@ -16,4 +16,9 @@
         <item>Medio</item>
         <item>Delantero</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>

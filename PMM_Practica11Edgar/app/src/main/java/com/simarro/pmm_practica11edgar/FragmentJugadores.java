@@ -191,7 +191,7 @@ public class FragmentJugadores extends Fragment implements View.OnClickListener{
 
                 db.close();
                 cargarDatos(MainActivity.jugadores);
-                
+
                 adaptador.notifyDataSetChanged();
         }
 
