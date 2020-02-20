@@ -1,40 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/menu_op1"
-        android:icon="@android:drawable/ic_menu_help"
-        android:title="Info"
-        android:checked="true" />
-    <item
-        android:id="@+id/menu_op2"
-        android:icon="@drawable/ic_nav_players_foreground"
-        android:title="Jugadores"
-        android:checked="true" />
-    <item
-        android:id="@+id/menu_op3"
-        android:icon="@drawable/ic_nav_news_foreground"
-        android:title="Noticias"
-        android:checked="true" />
-    <item
-        android:id="@+id/menu_op4"
-        android:icon="@drawable/ic_nav_weather_foreground"
-        android:title="Tiempo en Xátiva"
-        android:checked="true" />
 
-    <item
-        android:id="@+id/navigation_subheader"
-        android:title="Otras opciones"
-        >
-        <menu>
+    <group android:id="@+id/grupoMenu">
+        <item
+            android:id="@+id/menu_op1"
+            android:icon="@android:drawable/ic_menu_help"
+            android:title="@string/infoString"
+            android:checked="true" />
+        <item
+            android:id="@+id/menu_op2"
+            android:icon="@drawable/ic_nav_players_foreground"
+            android:title="@string/navJugadores"
+            android:checked="true" />
+        <item
+            android:id="@+id/menu_op3"
+            android:icon="@drawable/ic_nav_news_foreground"
+            android:title="@string/navNews"
+            android:checked="true" />
+        <item
+            android:id="@+id/menu_op4"
+            android:icon="@drawable/ic_nav_weather_foreground"
+            android:title="@string/navTime"
+            android:checked="true" />
 
-            <item
-                android:id="@+id/menu_subopcion_1"
-                android:icon="@android:drawable/ic_lock_power_off"
-                android:title="Cerrar sesión"
-                android:checked="true" />
+        <item
+            android:id="@+id/navigation_subheader"
+            android:title="@string/navOther"
+            >
+            <menu>
 
-        </menu>
+                <item
+                    android:id="@+id/menu_subopcion_1"
+                    android:icon="@android:drawable/ic_lock_power_off"
+                    android:title="@string/navLogout"
+                    android:checked="true" />
+
+            </menu>
 
 
-    </item>
+        </item>
+    </group>
+
+
 </menu>

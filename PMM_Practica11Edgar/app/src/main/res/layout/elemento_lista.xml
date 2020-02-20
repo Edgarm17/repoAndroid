@@ -18,7 +18,7 @@
         android:id="@+id/tvNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nombre Jugador"
+        android:text="@string/elemListaNombre"
         android:layout_toRightOf="@+id/imgJugador"
 
         android:layout_alignParentTop="true"
@@ -34,7 +34,7 @@
         android:layout_alignParentEnd="true"
         android:maxLines="1"
         android:layout_marginRight="20dp"
-        android:text="Número"
+        android:text="@string/elemListaNum"
         android:textSize="20dp"
 
         android:textAlignment="center"
@@ -46,7 +46,7 @@
         android:layout_below="@+id/tvNombre"
         android:layout_toRightOf="@id/imgJugador"
         android:maxLines="1"
-        android:text="Posicion"
+        android:text="@string/elemListaPos"
         android:textAppearance="?android:attr/textAppearanceSmall"
         />
 </RelativeLayout>

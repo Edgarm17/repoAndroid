@@ -8,9 +8,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.preference.PreferenceManager;
-
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,12 +21,9 @@ import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -38,7 +35,10 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, DialogPersonalizado.OnLoginListener{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, DialogPersonalizado.OnLoginListener,View.OnClickListener{
+
+
+
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
@@ -47,10 +47,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public static int jugadorAModificar;
     public static ArrayList<Jugador> jugadores = new ArrayList<>();
     public static WebView webView;
-    public static String estado,temperatura,humedad,viento;
+    public static boolean modoAvion;
+    public static String estado,temperatura,humedad,viento,nombreUsuario,correo;
 
 
     public static ProgressBar progressBar;
+
 
 
     @Override
@@ -59,10 +61,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
 
 
+        ModoVueloReceiver receiver = new ModoVueloReceiver();
+
+        IntentFilter intentFilter = new IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+        this.registerReceiver(receiver,intentFilter);
+
+        Fragment fragment = FragmentPerfil.newInstance();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
 
         SharedPreferences prefs = getSharedPreferences("Usuarios", Context.MODE_PRIVATE);
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        correo = preferences.getString("username","CORREO");
         PreferenciasAplicacion.obtenerPreferencias(preferences,this);
         PreferenciasAplicacion.mostrarPreferencias(preferences,this);
 
@@ -70,6 +80,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (prefs.getString("username","").equals("")){
             mostrarDialogoPersonalizado();
+
+
+            getSupportActionBar().setTitle("Perfil");
         }
 
 
@@ -86,9 +99,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (!prefs.getString("username","").equals("")){
             String user = prefs.getString("username","noUser");
+            nombreUsuario = user;
             View vistaHeaderNav = navigationView.getHeaderView(0);
             TextView tvName = (TextView)vistaHeaderNav.findViewById(R.id.tvNombre);
             ImageView img = (ImageView)vistaHeaderNav.findViewById(R.id.imgView);
+            img.setOnClickListener(this);
 
             switch (user){
 
@@ -118,6 +133,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -151,9 +167,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 PreferenciasAplicacion.obtenerPreferencias(preferences,this);
                 fragment = FragmentNoticias.newInstance();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
-                if (progressBar != null){
 
-                }
                 break;
             case R.id.menu_subopcion_1:
                 fragment = FragmentFondo.newInstance();
@@ -325,6 +339,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onPause();
         if (FragmentNoticias.tareaAsincrona != null){
             FragmentNoticias.tareaAsincrona.cancel(true);
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.imgView:
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+                PreferenciasAplicacion.obtenerPreferencias(preferences,this);
+                Fragment f = FragmentPerfil.newInstance();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,f).commit();
+
+                getSupportActionBar().setTitle("Perfil");
+                drawerLayout.closeDrawers();
         }
     }
 }

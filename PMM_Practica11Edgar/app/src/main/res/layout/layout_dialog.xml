@@ -2,8 +2,9 @@
     android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="#123456"
+    android:background="#90FF9C"
     android:id="@+id/linear"
+    android:padding="20dp"
     >
 
     <TextView
@@ -11,8 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Login"
-        android:textSize="20dp"
+        android:text="@string/loginTit"
+        android:textSize="20sp"
         android:textColor="@android:color/darker_gray"
         />
 
@@ -31,7 +32,7 @@
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginBottom="4dp"
-        android:hint="Username"
+        android:hint="@string/usrName"
         android:textColor="@android:color/darker_gray"
         />
     <EditText
@@ -44,7 +45,7 @@
         android:layout_marginRight="4dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif"
-        android:hint="Password"
+        android:hint="@string/passHint"
         android:textColor="@android:color/darker_gray"
         />
 
@@ -52,7 +53,7 @@
         android:id="@+id/tvError"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Error en el login"
+        android:text="@string/logErr"
         android:layout_marginLeft="10dp"
         android:textColor="@android:color/holo_red_light"
         android:visibility="gone"
@@ -62,7 +63,7 @@
         android:id="@+id/tvVacio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Los campos están vacios"
+        android:text="@string/emptyValues"
         android:textColor="@android:color/holo_red_light"
         android:layout_marginLeft="10dp"
         android:visibility="gone"
@@ -80,7 +81,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Sign in"
+            android:text="@string/entrarLogin"
+            android:textColor="@color/white"
+            android:backgroundTint="#016F10"
 
             />
 
@@ -89,7 +92,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Cancel" />
+            android:textColor="@color/white"
+            android:backgroundTint="#016F10"
+            android:text="@string/cancelLogin" />
     </LinearLayout>
 
 </LinearLayout>

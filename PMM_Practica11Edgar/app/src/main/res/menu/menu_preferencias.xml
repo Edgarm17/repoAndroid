@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/opPref"
-        android:title="Preferencias"
+        android:title="@string/prefPref"
         android:orderInCategory="100"
         app:showAsAction="never"/>
 

@@ -20,7 +20,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nuevo Jugador"
+            android:text="@string/modNewJugador"
             android:textSize="30dp"
             android:layout_margin="10dp"
             android:textStyle="bold"
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="Nombre"
+            android:hint="@string/nombreHint"
             />
 
         <EditText
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:hint="Numero"  />
+            android:hint="@string/numeroHint"  />
 
         <EditText
             android:id="@+id/etTelefono"
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:hint="Teléfono"  />
+            android:hint="@string/telefonoHint"  />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -63,7 +63,7 @@
                 android:layout_marginLeft="5dp"
                 android:textSize="17dp"
                 android:textColor="#000000"
-                android:text="Posición: " />
+                android:text="@string/modPlayerPos" />
 
             <Spinner
                 android:id="@+id/spTipo"
@@ -87,13 +87,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:text="Crear jugador" />
+                android:text="@string/crearJugador" />
             <Button
                 android:id="@+id/btnEditar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:text="Editar jugador" />
+                android:text="@string/editarJugador" />
         </LinearLayout>
     </LinearLayout>
 

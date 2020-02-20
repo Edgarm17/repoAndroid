@@ -24,6 +24,7 @@ public class TareaAsincrona extends AsyncTask<Integer,Integer,Boolean> {
 
     @Override
     protected void onPostExecute(Boolean aBoolean) {
+        if (MainActivity.modoAvion)return;
         Toast.makeText(mContext, "Página cargada", Toast.LENGTH_SHORT).show();
         MainActivity.progressBar.setVisibility(View.GONE);
     }

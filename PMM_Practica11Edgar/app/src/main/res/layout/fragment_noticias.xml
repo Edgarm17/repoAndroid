@@ -7,8 +7,9 @@
     android:background="@color/white"
     >
 
-
    <LinearLayout
+
+       android:id="@+id/linearWebView"
        android:layout_width="match_parent"
        android:layout_height="match_parent"
        android:orientation="vertical">
@@ -22,7 +23,17 @@
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:id="@+id/webView"/>
+
    </LinearLayout>
 
+
+   <TextView
+       android:id="@+id/tvAviso"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:text="@string/dispNews"
+       android:textAlignment="center"
+       android:gravity="center_vertical"
+       />
 
 </FrameLayout>

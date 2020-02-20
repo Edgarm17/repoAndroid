@@ -18,6 +18,8 @@ public class PreferenciasAplicacion {
         correo = preferences.getString(EMAIL,"CORREO");
         paginaWeb = preferences.getString(PAGINA,"PAGINA");
 
+        MainActivity.correo = correo;
+
 
     }
 

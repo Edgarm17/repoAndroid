@@ -13,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 
 public class DialogPersonalizado extends DialogFragment {
 
@@ -64,6 +65,9 @@ public class DialogPersonalizado extends DialogFragment {
             @Override
             public void onClick(View v) {
                 listener.onLogin(DialogPersonalizado.this,etUser.getText().toString(),etPass.getText().toString());
+                Fragment f = new FragmentPerfil();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,f).commit();
+
             }
 
         });

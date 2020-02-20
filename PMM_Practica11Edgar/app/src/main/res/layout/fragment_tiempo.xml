@@ -21,10 +21,10 @@
             android:id="@+id/tvTemperatura"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TEMPERATURA: "
+            android:text="@string/apiTemperatura"
             android:textColor="@color/white"
             android:layout_marginBottom="50dp"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:textAlignment="center"
             />
 
@@ -33,8 +33,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:text="HUMEDAD: "
-            android:textSize="30dp"
+            android:text="@string/apiHumedad"
+            android:textSize="30sp"
             android:layout_marginBottom="50dp"
             android:textAlignment="center"
             />
@@ -44,8 +44,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:text="VIENTO: "
-            android:textSize="30dp"
+            android:text="@string/apiWind"
+            android:textSize="30sp"
             android:textAlignment="center"
             />
 
