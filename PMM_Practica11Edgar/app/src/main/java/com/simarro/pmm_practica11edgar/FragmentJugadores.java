@@ -1,6 +1,8 @@
 package com.simarro.pmm_practica11edgar;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Canvas;
@@ -8,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,6 +23,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.ItemTouchHelper;
@@ -28,6 +32,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 
+import com.google.android.material.snackbar.Snackbar;
+
+import java.lang.reflect.GenericArrayType;
 import java.util.ArrayList;
 import java.util.MissingFormatArgumentException;
 
@@ -193,10 +200,41 @@ public class FragmentJugadores extends Fragment implements View.OnClickListener{
                 cargarDatos(MainActivity.jugadores);
 
                 adaptador.notifyDataSetChanged();
+                
+            case R.id.opDefault:
+                
+                cargarDefault();
+
+                cargarDatos(MainActivity.jugadores);
+
+                adaptador.notifyDataSetChanged();
+                
         }
 
         return  true;
 
+    }
+    
+    public void insertarPlayerBDD(Jugador j){
+
+        db = helper.getWritableDatabase();
+
+        db.execSQL("INSERT INTO Jugador (nombre,numero,telefono,posicion) VALUES ('"+j.getNombre()+"','"+j.getNumero()+"','"+j.getTelefono()+"','"+j.getPosicion()+"')");
+        db.close();
+    }
+    
+    public void cargarDefault(){
+        insertarPlayerBDD(new Jugador("Jugador1","1","699004034","Portero"));
+        insertarPlayerBDD(new Jugador("Jugador2","2","65214256","Defensa"));
+        insertarPlayerBDD(new Jugador("Jugador3","3","65214256","Defensa"));
+        insertarPlayerBDD(new Jugador("Jugador4","4","65214256","Defensa"));
+        insertarPlayerBDD(new Jugador("Jugador5","5","65214256","Defensa"));
+        insertarPlayerBDD(new Jugador("Jugador6","6","65214256","Medio"));
+        insertarPlayerBDD(new Jugador("Jugador7","7","65214256","Medio"));
+        insertarPlayerBDD(new Jugador("Jugador8","8","65214256","Medio"));
+        insertarPlayerBDD(new Jugador("Jugador9","9","65214256","Delantero"));
+        insertarPlayerBDD(new Jugador("Jugador10","10","65214256","Delantero"));
+        insertarPlayerBDD(new Jugador("Jugador11","11","65214256","Delantero"));
     }
 
     public void cargarDatos(ArrayList<Jugador> jugadores){
@@ -220,6 +258,26 @@ public class FragmentJugadores extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
+        int posicion = recyclerView.getChildAdapterPosition(v);
+        final Jugador jSeleccionado = MainActivity.jugadores.get(posicion);
+        Snackbar.make(recyclerView, "Telefono: " + jSeleccionado.getTelefono(), Snackbar.LENGTH_SHORT)
+                .setAction("LLAMAR", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        telefonoALlamar = jSeleccionado.getTelefono();
+                        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
+                            llamar(telefonoALlamar);
+                        }else{
+                            Utilidades.solicitarPermiso(Manifest.permission.CALL_PHONE,"Se necesita permiso para realizar la llamada.",1, getActivity());
+                        }
+                    }
+                })
+                .setActionTextColor(Color.GREEN)
+                .show();
+    }
 
+    public void llamar(String telefono) throws SecurityException{
+        Intent i = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+telefono));
+        startActivity(i);
     }
 }

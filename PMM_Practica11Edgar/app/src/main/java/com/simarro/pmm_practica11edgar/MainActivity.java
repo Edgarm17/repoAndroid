@@ -292,10 +292,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     ImageView img = (ImageView)findViewById(R.id.imgView);
                     switch (user){
                         case "edgar":
-                            img.setImageDrawable(getDrawable(R.drawable.yoda));
+                            img.setImageDrawable(getDrawable(R.drawable.darth));
                             break;
                         case "jose":
-                            img.setImageDrawable(getDrawable(R.drawable.darth));
+                            img.setImageDrawable(getDrawable(R.drawable.yoda));
                             break;
                         case "pepe":
 

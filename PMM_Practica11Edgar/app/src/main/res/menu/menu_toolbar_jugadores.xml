@@ -11,4 +11,8 @@
         android:title="@string/resetPlayers"
         android:orderInCategory="100"
         app:showAsAction="never"/>
+    <item android:id="@+id/opDefault"
+        android:title="Cargar default"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
 </menu>
